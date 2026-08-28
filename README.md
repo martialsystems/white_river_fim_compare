@@ -41,11 +41,17 @@ Figure 2. Same four layers at the 2026-08-15 crest 21.18 ft and USGS WSE 731.5 f
 
 Live rasters, the NWS shapefile zip, and `*.tif` stay gitignored; `logs/nora_live/four_wet.png` and `logs/nora_live/four_wet_crest_2026-08-15.png` are the committed figures.
 
-Related trees:
+## Summary
 
-- https://github.com/martialsystems/indiana_flood_completion (HUC-8 05120201 map completion; same HAND grid)
-- https://github.com/martialsystems/white_river_stage_inundation (Nora HAND bathtub at 11.00 ft and 21.18 ft)
-- Three-tree summary: https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be
+Three trees on one 30 m HAND grid (HUC-8 05120201). This repo is the SIR 2011-5138 compare.
+
+| Tree | Question |
+|------|----------|
+| [indiana_flood_completion](https://github.com/martialsystems/indiana_flood_completion) | Which 30 m cells look like the current SFHA given terrain and distance-to-water? |
+| [white_river_stage_inundation](https://github.com/martialsystems/white_river_stage_inundation) | Which cells on one White River reach are wet at USGS 03351000 stage 11.00 ft and at 21.18 ft? |
+| [white_river_fim_compare](https://github.com/martialsystems/white_river_fim_compare) | Does that HAND bathtub sit in the same neighborhood as USGS SIR 2011-5138 on the Nora window? |
+
+Write-up: https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be
 
 Limitations:
 

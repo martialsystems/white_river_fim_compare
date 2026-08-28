@@ -21,6 +21,7 @@ def test_readme_lead_and_claims() -> None:
     assert "indiana_flood_completion" in text
     assert "white_river_stage_inundation" in text
     assert "https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be" in text
+    assert "## Summary" in text
     assert "gitignored" in text
     assert scan_text(text) == []
     assert "—" not in text
