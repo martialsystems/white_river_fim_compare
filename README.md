@@ -45,6 +45,7 @@ Related trees:
 
 - https://github.com/martialsystems/indiana_flood_completion (HUC-8 05120201 map completion; same HAND grid)
 - https://github.com/martialsystems/white_river_stage_inundation (Nora HAND bathtub at 11.00 ft and 21.18 ft)
+- Three-tree summary: https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be
 
 Limitations:
 
