@@ -1,0 +1,29 @@
+{
+  "runtime_checks": [
+    {
+      "id": "unit-tests",
+      "argv": [".venv/bin/python", "-m", "pytest", "tests/", "-q"],
+      "timeout_s": 120,
+      "paths": [
+        "src/**",
+        "tests/**",
+        "scripts/**",
+        "fimforge/**",
+        "requirements.txt",
+        "vbd.runtime.json"
+      ]
+    },
+    {
+      "id": "fixture-path",
+      "argv": [".venv/bin/python", "scripts/run_fixture.py", "logs/stage0_fixture"],
+      "timeout_s": 60,
+      "paths": ["src/**", "scripts/**", "tests/**"]
+    },
+    {
+      "id": "fimforge-sanity",
+      "argv": [".venv/bin/python", "fimforge/scripts/sanity_fimforge.py"],
+      "timeout_s": 60,
+      "paths": ["fimforge/**", "tests/test_fimforge_laws.py"]
+    }
+  ]
+}

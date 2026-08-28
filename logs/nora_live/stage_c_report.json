@@ -1,0 +1,89 @@
+{
+  "stage": "C",
+  "gage_id": "03351000",
+  "sir": "2011-5138",
+  "fixture": false,
+  "p_is_forecast": false,
+  "hand_is_firm": false,
+  "usgs_is_firm": false,
+  "hand_flood_stage_ft": 11.0,
+  "hand_crest_stage_ft": 21.18,
+  "pairs": {
+    "flood": {
+      "hand_stage_ft": 11.0,
+      "hand_wse_ft": 721.51,
+      "usgs_wse_ft": 721.5,
+      "gap_ft": 0.01
+    },
+    "crest": {
+      "hand_stage_ft": 21.18,
+      "hand_wse_ft": 731.69,
+      "usgs_wse_ft": 731.5,
+      "gap_ft": 0.19
+    }
+  },
+  "sibling_sha": {
+    "p_calibrated": "8e1cc7b2178192d6859b3ff6d01014019cf9c5588fbadc3d8b7e228a41ca42c3",
+    "zone_class": "1d6c6e39f8f861e71eb4da1b781a12b09a747ab01491e38d641039e75921a0f6",
+    "nora_wet_transform": "be00bbfb15ea71a9865ed2f197f392484fdbd6fc371daac2976f49e5fa4459ec",
+    "indiana_transform": "479ac37628bfd7e5d409f6108ae6ba1805acfd37ecdc7093785db06ac9ebec22"
+  },
+  "nora_paths": {
+    "wet": "wet.tif",
+    "wet_crest": "wet_crest_2026-08-15.tif",
+    "zone_class": "zone_class.tif",
+    "p_calibrated": "p_calibrated.tif"
+  },
+  "flood": {
+    "table": {
+      "p_definition": "P(sfha | hydro)",
+      "p_is_forecast": false,
+      "p_headline_t": 0.75,
+      "n_reach_comparable": 2604,
+      "n_sfha": 1515,
+      "n_p_ge_t": 324,
+      "n_hand_wet": 1197,
+      "n_usgs_wet": 528,
+      "n_hand_and_usgs": 504,
+      "n_sfha_dry_hand": 369,
+      "n_sfha_dry_usgs": 989,
+      "n_hand_unshaded_x": 38,
+      "n_usgs_unshaded_x": 2,
+      "iou_universe": "drain-to-reach",
+      "iou_hand_usgs": 0.41277641277641275,
+      "iou_sfha_hand": 0.7318007662835249,
+      "iou_sfha_usgs": 0.34673698088332233,
+      "iou_p_hand": 0.2706766917293233,
+      "iou_p_usgs": 0.21540656205420827,
+      "usgs_is_firm": false,
+      "hand_is_firm": false
+    },
+    "leftover": "Leftover SFHA dry: HAND 369, USGS 989. Unshaded X wet: HAND 38, USGS 2. 504 of 528 USGS wet cells are HAND-wet. IoU HAND vs USGS = 0.41 on drain-to-reach."
+  },
+  "crest": {
+    "table": {
+      "p_definition": "P(sfha | hydro)",
+      "p_is_forecast": false,
+      "p_headline_t": 0.75,
+      "n_reach_comparable": 2604,
+      "n_sfha": 1515,
+      "n_p_ge_t": 324,
+      "n_hand_wet": 1876,
+      "n_usgs_wet": 619,
+      "n_hand_and_usgs": 618,
+      "n_sfha_dry_hand": 50,
+      "n_sfha_dry_usgs": 916,
+      "n_hand_unshaded_x": 338,
+      "n_usgs_unshaded_x": 15,
+      "iou_universe": "drain-to-reach",
+      "iou_hand_usgs": 0.3292488012786361,
+      "iou_sfha_hand": 0.7606438213914849,
+      "iou_sfha_usgs": 0.390228013029316,
+      "iou_p_hand": 0.17270788912579957,
+      "iou_p_usgs": 0.20280612244897958,
+      "usgs_is_firm": false,
+      "hand_is_firm": false
+    },
+    "leftover": "Leftover SFHA dry: HAND 50, USGS 916. Unshaded X wet: HAND 338, USGS 15. 618 of 619 USGS wet cells are HAND-wet. IoU HAND vs USGS = 0.33 on drain-to-reach."
+  }
+}
