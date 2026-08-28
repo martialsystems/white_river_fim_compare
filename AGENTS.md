@@ -4,7 +4,7 @@ Public GitHub. MIT on this snapshot. Geography is USGS 03351000 Nora on HUC-8 05
 
 ## Product
 
-Four layers on the Nora drain-to-reach window: FEMA SFHA, P ≥ 0.75, HAND wet at 11.00 ft and 21.18 ft, USGS SIR 2011-5138 polygon at WSE 721.5 and 731.5. IoU is drain-to-reach only. Combined interview sheet is not in git.
+Four layers on the Nora drain-to-reach window: FEMA SFHA, P ≥ 0.75, HAND wet at 11.00 ft and 21.18 ft, USGS SIR 2011-5138 polygon at WSE 721.5 and 731.5. Lead with containment (N of M USGS-wet also HAND-wet, plus miss). IoU stays in that same paragraph as the superset / upstream-window reason. Combined interview sheet is not in git. WTP/substations is a different folder.
 
 ## Stages
 

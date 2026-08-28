@@ -6,7 +6,7 @@ Locked contract for `white_river_fim_compare`. Freeze both siblings. Do not reco
 
 USGS 03351000 White River near Nora, IN (NWS NORI3). The membership test is the Nora drain-to-reach mask from `white_river_stage_inundation` (`wet.tif` cells that are not nodata). That is a 5 km White River mainstem plus 1 km margin, EPSG:5070, 30 m, 401 by 401.
 
-The USGS library covers about 11 miles from the Nora gage downstream toward the Indianapolis Museum of Art. This tree clips the library polygon to the Nora window. Scores are that clip only.
+The USGS library runs about 11 miles from the Nora gage downstream toward the Indianapolis Museum of Art. This tree clips the library polygon to the Nora window. Scores are that clip only. The Nora window also includes 5 km upstream of the gage.
 
 ## Four layers
 
@@ -26,7 +26,7 @@ Pinned pairs:
 | 11.00 ft | 721.51 | 721.5 | 0.01 ft |
 | 21.18 ft | 731.69 | 731.5 | 0.19 ft |
 
-NWS zeroDatum is 710.52 ft. Nora datum is 710.51 ft. Caption that 0.01 ft offset.
+NWS zeroDatum is 710.52 ft. Nora datum is 710.51 ft. That 0.01 ft offset is noise.
 
 GIS source: `https://water.noaa.gov/resources/downloads/fim/ind/nori3/shapefile/nori3_shapefiles.zip`. Metadata cites SIR 2011-5138 and USGS Indiana Water Science Center. Partner FIM is the hydraulic library, not NWM HAND.
 
@@ -36,7 +36,7 @@ Nora wet iff D8 drain-to-reach and finite HAND and `HAND < Δ`, `Δ = WSE − h_
 
 ## Overlap
 
-Universe: drain-to-reach. HAND-nodata stays out. Headline IoU is HAND vs USGS. Also leftover SFHA (mapped SFHA, dry on that layer) and extra unshaded Zone X (wet on that layer). Descriptive IoU of SFHA and of P ≥ 0.75 against each inundation layer. No PR-AUC. No retraining.
+Universe: drain-to-reach. HAND-nodata stays out. Headline is containment: N of M USGS-wet cells that are also HAND-wet, plus the miss count. IoU stays in the same sentence as the reason it is low (HAND is a superset; the window includes upstream cells the 2011 library never mapped). Also leftover SFHA (mapped SFHA, dry on that layer) and extra unshaded Zone X. USGS wet vs HAND wet is the tight-map check. Descriptive IoU of SFHA and of P ≥ 0.75 against each inundation layer. No PR-AUC. No retraining. No drain-to-reach intersect library-domain IoU in v1.
 
 ## Stages
 
@@ -49,7 +49,7 @@ Do not skip. A refuses a missing library polygon. C refuses a HUC-wide mask.
 
 ## Claims
 
-Allowed: HAND bathtub vs USGS SIR 2011-5138 on the Nora window; nearest published WSE 721.5 / 731.5; mapped SFHA; calibrated P as a map layer; IoU / leftover-SFHA / extra unshaded X on drain-to-reach.
+Allowed: HAND bathtub vs USGS SIR 2011-5138 on the Nora window; nearest published WSE 721.5 / 731.5; mapped SFHA; calibrated P as a map layer; containment N of M USGS-wet also HAND-wet plus miss; leftover-SFHA / extra unshaded X; IoU on drain-to-reach in the same paragraph as the superset / upstream-window reason.
 
 Banned: 100-year exceedance; P as a forecast; HAND as a FIRM; USGS library as a FIRM; site-level flood risk; casualty / climate / population-at-risk; training on FEMA; whole-HUC paint; downtown Indianapolis library.
 

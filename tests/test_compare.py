@@ -25,9 +25,10 @@ def test_overlap_counts_and_refuses_huc_wide() -> None:
     assert int(t["n_usgs_wet"]) > 0
     assert int(t["n_hand_and_usgs"]) > 0
     s = leftover_sentence(t)
-    assert "Leftover SFHA" in s
-    assert "Unshaded X" in s
     assert "USGS wet cells are HAND-wet" in s
+    assert "miss" in s
+    assert s.index("USGS wet cells are HAND-wet") < s.index("Leftover SFHA")
+    assert "Unshaded X" in s
     assert "drain-to-reach" in s
     with pytest.raises(GateError):
         overlap_table(

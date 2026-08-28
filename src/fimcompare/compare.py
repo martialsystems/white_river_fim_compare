@@ -76,14 +76,15 @@ def overlap_table(
 
 
 def leftover_sentence(table: dict) -> str:
-    """Leftover SFHA, extra unshaded X, and USGS-in-HAND containment."""
+    """Containment first, then leftover SFHA / extra X, then IoU."""
     usgs_n = int(table["n_usgs_wet"])
     both = int(table["n_hand_and_usgs"])
+    miss = usgs_n - both
     return (
+        f"{both} of {usgs_n} USGS wet cells are HAND-wet ({miss} miss). "
         f"Leftover SFHA dry: HAND {int(table['n_sfha_dry_hand'])}, "
         f"USGS {int(table['n_sfha_dry_usgs'])}. "
         f"Unshaded X wet: HAND {int(table['n_hand_unshaded_x'])}, "
         f"USGS {int(table['n_usgs_unshaded_x'])}. "
-        f"{both} of {usgs_n} USGS wet cells are HAND-wet. "
         f"IoU HAND vs USGS = {float(table['iou_hand_usgs']):.2f} on drain-to-reach."
     )

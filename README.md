@@ -1,23 +1,26 @@
 # White River FIM compare (Nora)
 
-This tree puts four layers on the same 5 km White River window at USGS **03351000** / NWS **NORI3** (Nora, IN). FEMA SFHA and calibrated `P(sfha | hydro) ≥ 0.75` come from the map-completion sibling. HAND wet masks at **11.00 ft** and **21.18 ft** come from the Nora stage tree. The USGS layer is the Kim 2011 2-D library (SIR **2011-5138**), served as NWS partner FIM polygons at WSE **721.5 ft** and **731.5 ft** NAVD88, the published surfaces nearest those HAND stages.
+At flood stage, **504 of 528** USGS library-wet cells on this window are already HAND-wet (**24 miss**). At the 21.18 ft crest, **618 of 619** (**1 miss**). That is the same neighborhood. IoU 0.41 / 0.33 is what you get when HAND is a superset and the Nora window still includes upstream cells the 2011 library never mapped.
 
-`P(sfha | hydro)` is a map-completion layer, not water at 11 ft and not water at 21.18 ft. The HAND mask is a 30 m bathtub. The USGS polygon is a calibrated FaSTMECH extent, not a FIRM.
+USGS wet is 528 / 619 against HAND 1197 / 1876. Leftover SFHA stays dry on USGS (989 / 916). HAND fills leftover SFHA (dry 369 to 50) and extra unshaded X (38 to 338). USGS barely touches Zone X (2 to 15). The library is the tight 2-D map on this clip.
 
-NWS partner FIM uses zero datum 710.52 ft NAVD88. Nora uses 710.51. HAND 11.00 ft is WSE 721.51; the library surface is 721.5 (gap 0.01 ft). HAND 21.18 ft is WSE 731.69; the library surface is 731.5 (gap 0.19 ft). Scores are the Nora drain-to-reach window only. The USGS study starts at the gage and runs about 11 miles downstream toward the Indianapolis Museum of Art; the Nora window also includes 5 km upstream, so HAND is a superset.
+Four layers, one 5 km window at USGS **03351000** / NWS **NORI3**. FEMA SFHA and calibrated `P(sfha | hydro) ≥ 0.75` from the map-completion sibling. HAND wet at **11.00 ft** and **21.18 ft** from the Nora stage tree. USGS is the Kim 2011 FaSTMECH library (SIR **2011-5138**), NWS partner FIM polygons at WSE **721.5 ft** and **731.5 ft** NAVD88, nearest published surfaces to those HAND stages.
+
+`P(sfha | hydro)` is a map-completion layer, not water at 11 ft and not water at 21.18 ft. The HAND mask is a 30 m bathtub. The USGS polygon is not a FIRM.
+
+NWS 710.52 vs Nora 710.51 is noise. Scores are drain-to-reach only. Siblings frozen. No interpolated USGS surface. No downtown Indianapolis library. Same window as https://github.com/martialsystems/white_river_stage_inundation.
 
 | Quantity | Flood 11.00 ft / USGS 721.5 | Crest 21.18 ft / USGS 731.5 |
 |----------|----------------------------:|----------------------------:|
+| USGS wet also HAND | 504 of 528 | 618 of 619 |
+| USGS wet not HAND (miss) | 24 | 1 |
 | HAND wet | 1197 | 1876 |
 | USGS wet | 528 | 619 |
-| USGS wet also HAND | 504 of 528 | 618 of 619 |
 | IoU HAND vs USGS | 0.41 | 0.33 |
 | SFHA dry on HAND | 369 | 50 |
 | SFHA dry on USGS | 989 | 916 |
 | Unshaded X wet HAND | 38 | 338 |
 | Unshaded X wet USGS | 2 | 15 |
-
-IoU is on drain-to-reach cells only. Same window as https://github.com/martialsystems/white_river_stage_inundation.
 
 ![Figure 1. Flood stage vs USGS WSE 721.5](logs/nora_live/four_wet.png)
 
@@ -26,14 +29,15 @@ Figure 1. Four layers at NWS flood stage 11.00 ft and the nearest published USGS
 - SFHA: mapped floodway ∪ SFHA on the window.
 - P ≥ 0.75: sibling map-completion, not water at 11 ft.
 - HAND wet: bathtub at 11.00 ft.
-- USGS: SIR 2011-5138 polygon at WSE 721.5 ft.
+- USGS: SIR 2011-5138 polygon at WSE 721.5 ft. 504 of 528 USGS-wet cells are HAND-wet (24 miss).
 
 ![Figure 2. Crest vs USGS WSE 731.5](logs/nora_live/four_wet_crest_2026-08-15.png)
 
 Figure 2. Same four layers at the 2026-08-15 crest 21.18 ft and USGS WSE 731.5 ft.
 
-- Extra HAND wet filled leftover SFHA (dry 369 to 50) and lit unshaded X (38 to 338).
-- USGS stays tight: 618 of 619 library-wet cells are already HAND-wet. IoU 0.41 to 0.33 because HAND grows faster than the library.
+- Containment: 618 of 619 USGS-wet cells are HAND-wet (1 miss). Flood-stage miss is 24 of 528.
+- HAND fills leftover SFHA (dry 369 to 50) and extra unshaded X (38 to 338). USGS Zone X is 2 to 15.
+- IoU 0.41 / 0.33 is in the lead paragraph with the superset and upstream-window reason.
 
 Live rasters, the NWS shapefile zip, and `*.tif` stay gitignored; `logs/nora_live/four_wet.png` and `logs/nora_live/four_wet_crest_2026-08-15.png` are the committed figures.
 
@@ -45,8 +49,8 @@ Related trees:
 Limitations:
 
 - 30 m HAND vs a 10 m FaSTMECH polygon, clipped to the Nora window, not the full 11-mile library reach.
-- 0.01 ft and 0.19 ft WSE gaps; no interpolated USGS surface.
-- Crest 21.18 ft is NWS provisional.
+- Crest 21.18 ft is NWS provisional; nearest published library WSE is 731.5 ft.
+- IoU is on the full Nora drain-to-reach window, not drain-to-reach intersect library-domain. Containment is the neighborhood number.
 - One gage, two library surfaces. No third model, no whole HUC, no climate.
 
 | File | Role |

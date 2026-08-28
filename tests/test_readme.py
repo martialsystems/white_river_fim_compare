@@ -14,9 +14,14 @@ def test_readme_lead_and_claims() -> None:
     assert "21.18" in text
     assert "721.5" in text
     assert "731.5" in text
+    assert "504 of 528" in text
+    assert "618 of 619" in text
+    assert "24 miss" in text or "24 of 528" in text
+    assert text.find("504 of 528") < text.find("0.41")
     assert "indiana_flood_completion" in text
     assert "white_river_stage_inundation" in text
     assert "gitignored" in text
     assert scan_text(text) == []
     assert "—" not in text
     assert "What it is not" not in text
+    assert "covers the library" not in text.lower()

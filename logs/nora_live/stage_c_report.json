@@ -58,7 +58,7 @@
       "usgs_is_firm": false,
       "hand_is_firm": false
     },
-    "leftover": "Leftover SFHA dry: HAND 369, USGS 989. Unshaded X wet: HAND 38, USGS 2. 504 of 528 USGS wet cells are HAND-wet. IoU HAND vs USGS = 0.41 on drain-to-reach."
+    "leftover": "504 of 528 USGS wet cells are HAND-wet (24 miss). Leftover SFHA dry: HAND 369, USGS 989. Unshaded X wet: HAND 38, USGS 2. IoU HAND vs USGS = 0.41 on drain-to-reach."
   },
   "crest": {
     "table": {
@@ -84,6 +84,6 @@
       "usgs_is_firm": false,
       "hand_is_firm": false
     },
-    "leftover": "Leftover SFHA dry: HAND 50, USGS 916. Unshaded X wet: HAND 338, USGS 15. 618 of 619 USGS wet cells are HAND-wet. IoU HAND vs USGS = 0.33 on drain-to-reach."
+    "leftover": "618 of 619 USGS wet cells are HAND-wet (1 miss). Leftover SFHA dry: HAND 50, USGS 916. Unshaded X wet: HAND 338, USGS 15. IoU HAND vs USGS = 0.33 on drain-to-reach."
   }
 }
