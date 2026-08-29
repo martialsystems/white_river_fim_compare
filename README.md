@@ -86,4 +86,4 @@ Live (sibling rasters on disk, NWS zip fetched to `data/raw`):
 PYTHONPATH=src:. python3 scripts/run_live.py logs/nora_live
 ```
 
-Research index: https://github.com/martialsystems/.github/blob/main/RESEARCH.md
+Research index: https://gist.github.com/martialsystems/66b896b0a4a0b8cba2b478aef64312f3
