@@ -85,3 +85,5 @@ Live (sibling rasters on disk, NWS zip fetched to `data/raw`):
 ```bash
 PYTHONPATH=src:. python3 scripts/run_live.py logs/nora_live
 ```
+
+Lanes (maps / White River Q / precip): https://github.com/martialsystems
