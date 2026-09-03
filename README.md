@@ -8,7 +8,7 @@ Four layers, one 5 km window at USGS **03351000** / NWS **NORI3**. FEMA SFHA and
 
 `P(sfha | hydro)` is a map-completion layer, not water at 11 ft and not water at 21.18 ft. The HAND mask is a 30 m bathtub. The USGS polygon is not a FIRM.
 
-NWS 710.52 vs Nora 710.51 is noise. Scores are drain-to-reach only. Siblings frozen. No interpolated USGS surface. No downtown Indianapolis library. Same window as [![white_river_stage_inundation](https://img.shields.io/badge/white__river__stage__inundation-2e7d32?style=for-the-badge)](https://github.com/martialsystems/white_river_stage_inundation).
+NWS 710.52 vs Nora 710.51 is noise. Scores are drain-to-reach only. Siblings frozen. No interpolated USGS surface. No downtown Indianapolis library. Same window as [Nora wet cells at two stages](https://github.com/martialsystems/white_river_stage_inundation).
 
 | Quantity | Flood 11.00 ft / USGS 721.5 | Crest 21.18 ft / USGS 731.5 |
 |----------|----------------------------:|----------------------------:|
