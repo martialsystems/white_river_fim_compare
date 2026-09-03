@@ -8,7 +8,7 @@ Four layers, one 5 km window at USGS **03351000** / NWS **NORI3**. FEMA SFHA and
 
 `P(sfha | hydro)` is a map-completion layer, not water at 11 ft and not water at 21.18 ft. The HAND mask is a 30 m bathtub. The USGS polygon is not a FIRM.
 
-NWS 710.52 vs Nora 710.51 is noise. Scores are drain-to-reach only. Siblings frozen. No interpolated USGS surface. No downtown Indianapolis library. Same window as https://github.com/martialsystems/white_river_stage_inundation.
+NWS 710.52 vs Nora 710.51 is noise. Scores are drain-to-reach only. Siblings frozen. No interpolated USGS surface. No downtown Indianapolis library. Same window as [![white_river_stage_inundation](https://img.shields.io/badge/white__river__stage__inundation-2e7d32?style=for-the-badge)](https://github.com/martialsystems/white_river_stage_inundation).
 
 | Quantity | Flood 11.00 ft / USGS 721.5 | Crest 21.18 ft / USGS 731.5 |
 |----------|----------------------------:|----------------------------:|
@@ -51,7 +51,7 @@ Three trees on one 30 m HAND grid (HUC-8 05120201). This repo is the SIR 2011-51
 | [white_river_stage_inundation](https://github.com/martialsystems/white_river_stage_inundation) | Which cells on one White River reach are wet at USGS 03351000 stage 11.00 ft and at 21.18 ft? |
 | [white_river_fim_compare](https://github.com/martialsystems/white_river_fim_compare) | Does that HAND bathtub sit in the same neighborhood as USGS SIR 2011-5138 on the Nora window? |
 
-Write-up: https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be
+[![Maps writeup](https://img.shields.io/badge/Maps_writeup-2e7d32?style=for-the-badge)](https://gist.github.com/martialsystems/16584e78d079666f7e8994b4cc6158be)
 
 Limitations:
 
@@ -86,4 +86,4 @@ Live (sibling rasters on disk, NWS zip fetched to `data/raw`):
 PYTHONPATH=src:. python3 scripts/run_live.py logs/nora_live
 ```
 
-Research index: https://gist.github.com/martialsystems/66b896b0a4a0b8cba2b478aef64312f3
+[![Open the research console](https://img.shields.io/badge/Open_the_research_console-2e7d32?style=for-the-badge)](https://martialsystems.github.io/indiana_wx_pages/)
